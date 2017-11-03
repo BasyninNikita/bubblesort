@@ -34,10 +34,16 @@ void bubblesort(int *array,unsigned int size)
 		}
 	}
 }
-unsigned int size;
+
 int main(int argc, char** argv) {
-	cin>>size;
-	cin.get();	
+        unsigned int size;
+        string stroka;
+        getline(cin,stroka);
+        istringstream stream(stroka);
+	    if(!(stream>>size)){
+        cout<<"error"<<endl;
+        return -1;
+    }
 	int *array=new int[size];
 	if(vvod(array,size))
 	{
